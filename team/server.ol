@@ -8,12 +8,16 @@ Protocol: sodep
 Interfaces: HelloIface
 }
 
+outputPort CalcSrv {
+Location: "socket://localhost:8080/"
+Protocol: sodep
+Interfaces: HelloIface
+}
+
 main
 {
-  hello( team )( response ) {
-    for( i = 0, i < #team.person, i++ ) {
-      age += team.person[i].age
-    };
-    response = "The total age of the team is " + age
+	request(team)(reqRes) {
+  	request@CalcSrv(team)(sumRes);
+  	reqRes = sumRes
   }
 }
