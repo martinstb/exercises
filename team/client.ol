@@ -14,6 +14,6 @@ main
   team.person[0].age = 20;
   team.person[1].name = "Joan";
   team.person[1].age = 22;
-  hello@HelloSrv( team )( reply );
+  request@HelloSrv( team )( reply );
   println@Console( reply )()
 }
