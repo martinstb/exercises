@@ -8,5 +8,5 @@ type HelloRequest:void {
 
 interface HelloIface {
 RequestResponse:
-  hello(HelloRequest)(string)
+  request(HelloRequest)(string)
 }
